@@ -1,0 +1,449 @@
+_type: export
+__export_format: 4
+__export_date: 2022-04-01T02:14:36.371Z
+__export_source: insomnia.desktop.app:v2022.1.0
+resources:
+  - _id: req_be46871852aa48dcb040e08dc44ce822
+    parentId: wrk_e2b036e98a8a46df8fa408839ed4ce80
+    modified: 1647128571355
+    created: 1646757657430
+    url: http://localhost:5160/WeatherForecast
+    name: New Request
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1646757657430
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_e2b036e98a8a46df8fa408839ed4ce80
+    parentId: null
+    modified: 1646757657411
+    created: 1646757657411
+    name: New Document
+    description: ""
+    scope: design
+    _type: workspace
+  - _id: req_4673ad19bacf4972ba848bce8a78d2e0
+    parentId: fld_806737b3cb454e90804bc6420c474a5e
+    modified: 1646950122097
+    created: 1646950089417
+    url: http://localhost:8080/api/platforms
+    name: GetPlatforms
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1646929410905.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_806737b3cb454e90804bc6420c474a5e
+    parentId: wrk_e2b036e98a8a46df8fa408839ed4ce80
+    modified: 1646950066884
+    created: 1646950066884
+    name: Docker env
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1646950066884
+    _type: request_group
+  - _id: req_29430a226dec4ab8b810f5ddc8af6e43
+    parentId: fld_806737b3cb454e90804bc6420c474a5e
+    modified: 1646953892098
+    created: 1646953847532
+    url: http://localhost:5142/api/platforms
+    name: Create Platform
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        		"name": "Docker",
+        		"publisher": "Docker",
+        		"cost": "Free"
+        	}
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_b8a3a9fa906d4156b6a894e57790204d
+    authentication: {}
+    metaSortKey: -1646929410955.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_445846ef291b4f7eb90ac7d1b6e34aa0
+    parentId: fld_806737b3cb454e90804bc6420c474a5e
+    modified: 1646953895817
+    created: 1646953870250
+    url: http://localhost:5142/api/platforms/2
+    name: GetPlatformById
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1646929410855.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_118d5a8eaab54720ab9963018eedfaf5
+    parentId: fld_0d114553f8d04338b29f466a1eb50e4c
+    modified: 1646951017784
+    created: 1646867510668
+    url: http://localhost:5142/api/platforms
+    name: GetPlatforms
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1646867510668
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_0d114553f8d04338b29f466a1eb50e4c
+    parentId: fld_1ce96cc3ade84ba8abb548b3daaa0e1a
+    modified: 1646867479573
+    created: 1646867479573
+    name: PlatformService
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1646867479573
+    _type: request_group
+  - _id: fld_1ce96cc3ade84ba8abb548b3daaa0e1a
+    parentId: wrk_e2b036e98a8a46df8fa408839ed4ce80
+    modified: 1646867442971
+    created: 1646867442971
+    name: Local Dev
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1646867442971
+    _type: request_group
+  - _id: req_5b4002345bcc4111b06e1e90163f14c2
+    parentId: fld_0d114553f8d04338b29f466a1eb50e4c
+    modified: 1646951150322
+    created: 1646868810759
+    url: http://localhost:5142/api/platforms/2
+    name: GetPlatformById
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1646812584049
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_9d4295ee7b0d4e1687d9f6e7b5f4336b
+    parentId: fld_0d114553f8d04338b29f466a1eb50e4c
+    modified: 1647644318695
+    created: 1646870550601
+    url: http://localhost:5142/api/platforms
+    name: Create Platform
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        		"name": "Docker",
+        		"publisher": "Docker",
+        		"cost": "Free"
+        	}
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_b8a3a9fa906d4156b6a894e57790204d
+    authentication: {}
+    metaSortKey: -1646867510718
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_e515949ace9745758bb8c2f5e03ce5bc
+    parentId: fld_46f40fbf61554bf99019d57bc3c2d61d
+    modified: 1647130126829
+    created: 1647129911607
+    url: http://localhost:5160/api/c/platforms
+    name: Test inbound connection
+    description: ""
+    method: POST
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1647129911607
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_46f40fbf61554bf99019d57bc3c2d61d
+    parentId: fld_1ce96cc3ade84ba8abb548b3daaa0e1a
+    modified: 1647128590871
+    created: 1647128529058
+    name: CommandService
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1646867479623
+    _type: request_group
+  - _id: req_0cbad33dfd31473cb01a9b6a18b19b83
+    parentId: fld_ae60cb14a0e04ae5adc31ad4c19a71b6
+    modified: 1647899306491
+    created: 1647899306491
+    url: http://localhost:32033/api/platforms
+    name: GetPlatforms
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1646929410980.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_ae60cb14a0e04ae5adc31ad4c19a71b6
+    parentId: fld_2916ce5463cf4ae8b663147905d30bfa
+    modified: 1647899282614
+    created: 1647899282614
+    name: NodePort
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1647899282614
+    _type: request_group
+  - _id: fld_2916ce5463cf4ae8b663147905d30bfa
+    parentId: wrk_e2b036e98a8a46df8fa408839ed4ce80
+    modified: 1647124941791
+    created: 1647124941791
+    name: K8S
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1646908773228.5
+    _type: request_group
+  - _id: req_ffa3882b43aa430c96aa9dc5520ab470
+    parentId: fld_ae60cb14a0e04ae5adc31ad4c19a71b6
+    modified: 1648074404631
+    created: 1647899313067
+    url: http://localhost:32033/api/platforms
+    name: Create Platform
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        		"name": "Docker",
+        		"publisher": "Docker",
+        		"cost": "Free"
+        	}
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_b8a3a9fa906d4156b6a894e57790204d
+    authentication: {}
+    metaSortKey: -1646929410930.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_e4f3cf0b17634cc6b9d44f559a29fea7
+    parentId: fld_ae60cb14a0e04ae5adc31ad4c19a71b6
+    modified: 1647899320557
+    created: 1647899320557
+    url: http://localhost:32033/api/platforms/3
+    name: GetPlatformById
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1646929410880.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_6d97c8a749474c36b48ac03b21409dac
+    parentId: fld_875253d6a354483587fd7b97bd4c4cc8
+    modified: 1647899342980
+    created: 1647124941793
+    url: http://acme.com/api/platforms
+    name: GetPlatforms
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1646929411005.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_875253d6a354483587fd7b97bd4c4cc8
+    parentId: fld_2916ce5463cf4ae8b663147905d30bfa
+    modified: 1647899300909
+    created: 1647899300909
+    name: Ingress
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1647899300909
+    _type: request_group
+  - _id: req_aba03896a6ba4f75acb84755d9198bd0
+    parentId: fld_875253d6a354483587fd7b97bd4c4cc8
+    modified: 1648081766977
+    created: 1647124941796
+    url: http://acme.com/api/platforms
+    name: Create Platform
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        		"name": "Docker",
+        		"publisher": "Docker",
+        		"cost": "Free"
+        	}
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_b8a3a9fa906d4156b6a894e57790204d
+    authentication: {}
+    metaSortKey: -1646929411055.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_8aa7b305865f43c9b163c945e123a973
+    parentId: fld_875253d6a354483587fd7b97bd4c4cc8
+    modified: 1648075441268
+    created: 1647124941798
+    url: http://acme.com/api/platforms/3
+    name: GetPlatformById
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1646929410955.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_f90e9d795d5fff94205e12cf4ca0598175c83298
+    parentId: wrk_e2b036e98a8a46df8fa408839ed4ce80
+    modified: 1646757657424
+    created: 1646757657424
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1646757657424
+    _type: environment
+  - _id: jar_f90e9d795d5fff94205e12cf4ca0598175c83298
+    parentId: wrk_e2b036e98a8a46df8fa408839ed4ce80
+    modified: 1646757657427
+    created: 1646757657427
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_d99808e4779b428f91e17dc341b91c47
+    parentId: wrk_e2b036e98a8a46df8fa408839ed4ce80
+    modified: 1648777137856
+    created: 1646757657420
+    fileName: New Document
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: uts_21d7a076a275400f9705f5123225577b
+    parentId: wrk_e2b036e98a8a46df8fa408839ed4ce80
+    modified: 1646757657431
+    created: 1646757657431
+    name: Example Test Suite
+    _type: unit_test_suite
