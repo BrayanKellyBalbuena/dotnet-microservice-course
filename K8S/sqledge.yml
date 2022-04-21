@@ -19,6 +19,10 @@ spec:
       containers:
         - name: azuresqledge
           image: mcr.microsoft.com/azure-sql-edge:latest
+          resources:
+            limits:
+              memory: "1Gi"
+              cpu: "500m"
           ports:
             - containerPort: 1433
           volumeMounts:

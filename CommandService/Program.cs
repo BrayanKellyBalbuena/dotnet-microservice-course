@@ -1,6 +1,19 @@
+using CommandService.AsyncDataService;
+using CommandService.Data;
+using CommandService.EventProcessing;
+using CommandService.SyncDataServices.Grpc;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<ICommandRepository, CommandRepository>();
+builder.Services.AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("InMem"));
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddSingleton<IEventProcessor, EventProcessor>();
+builder.Services.AddScoped<IPlatformDataClient, PlatformDataClient>();
+
+builder.Services.AddHostedService<MessageBusSubscriber>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -14,12 +27,16 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseExceptionHandler("/error-development");
+}
+else
+{
+    app.UseExceptionHandler("/error");
 }
 
 // app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
 app.MapControllers();
-
+PrepDb.PrepPopulation(app);
 app.Run();
