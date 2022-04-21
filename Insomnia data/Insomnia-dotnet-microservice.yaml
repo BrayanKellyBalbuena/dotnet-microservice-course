@@ -1,7 +1,7 @@
 _type: export
 __export_format: 4
-__export_date: 2022-04-01T02:14:36.371Z
-__export_source: insomnia.desktop.app:v2022.1.0
+__export_date: 2022-04-21T08:54:38.116Z
+__export_source: insomnia.desktop.app:v2022.2.1
 resources:
   - _id: req_be46871852aa48dcb040e08dc44ce822
     parentId: wrk_e2b036e98a8a46df8fa408839ed4ce80
@@ -158,9 +158,9 @@ resources:
     _type: request_group
   - _id: req_5b4002345bcc4111b06e1e90163f14c2
     parentId: fld_0d114553f8d04338b29f466a1eb50e4c
-    modified: 1646951150322
+    modified: 1650528031992
     created: 1646868810759
-    url: http://localhost:5142/api/platforms/2
+    url: " http://localhost:5142/api/platforms/2"
     name: GetPlatformById
     description: ""
     method: GET
@@ -179,7 +179,7 @@ resources:
     _type: request
   - _id: req_9d4295ee7b0d4e1687d9f6e7b5f4336b
     parentId: fld_0d114553f8d04338b29f466a1eb50e4c
-    modified: 1647644318695
+    modified: 1650527939735
     created: 1646870550601
     url: http://localhost:5142/api/platforms
     name: Create Platform
@@ -189,9 +189,10 @@ resources:
       mimeType: application/json
       text: |-
         {
-        		"name": "Docker",
-        		"publisher": "Docker",
-        		"cost": "Free"
+        		"id": 2,
+        		"name": "SQL Server Express",
+        		"publisher": "Microsoft",
+        		"cost": "Paid"
         	}
     parameters: []
     headers:
@@ -208,19 +209,72 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
-  - _id: req_e515949ace9745758bb8c2f5e03ce5bc
-    parentId: fld_46f40fbf61554bf99019d57bc3c2d61d
-    modified: 1647130126829
-    created: 1647129911607
-    url: http://localhost:5160/api/c/platforms
-    name: Test inbound connection
+  - _id: req_ad304c3d412d44acb490f8f22b88c8cc
+    parentId: fld_0d114553f8d04338b29f466a1eb50e4c
+    modified: 1650527836388
+    created: 1650336554312
+    url: http://localhost:5142/api/platforms/1
+    name: Delete Platform
     description: ""
-    method: POST
+    method: DELETE
     body: {}
     parameters: []
     headers: []
     authentication: {}
-    metaSortKey: -1647129911607
+    metaSortKey: -1650336554312
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_53887de9599a403aba29be5777679c6d
+    parentId: fld_0d114553f8d04338b29f466a1eb50e4c
+    modified: 1650527952857
+    created: 1650525281181
+    url: http://localhost:5142/api/platforms/2
+    name: Update Platform
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        		"id": 2,
+        		"name": "SQL Server Express",
+        		"publisher": "Microsoft",
+        		"cost": "Paid"
+        	}
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_b8a3a9fa906d4156b6a894e57790204d
+    authentication: {}
+    metaSortKey: -1646867510680.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_03364a877a2d4de8a2fdf7591d5fbbeb
+    parentId: fld_46f40fbf61554bf99019d57bc3c2d61d
+    modified: 1649297501016
+    created: 1648876713340
+    url: http://localhost:5160/api/c/platforms
+    name: GetAllPlatforms
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1647029661331.375
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -239,6 +293,78 @@ resources:
     environmentPropertyOrder: null
     metaSortKey: -1646867479623
     _type: request_group
+  - _id: req_691e45f4f67a4f8593b205930600dbd4
+    parentId: fld_46f40fbf61554bf99019d57bc3c2d61d
+    modified: 1650529130470
+    created: 1649027254110
+    url: http://localhost:5160/api/c/platforms/1/commands/1
+    name: Get command for Platform
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1646979536193.5625
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_32685e2a4209435ca068285f8e4041bb
+    parentId: fld_46f40fbf61554bf99019d57bc3c2d61d
+    modified: 1649732567927
+    created: 1649034469688
+    url: http://localhost:5160/api/c/platforms/1/commands
+    name: Get all commands for Platform
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1646954473624.6562
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_b06cb7a3983946d7af242867e5055517
+    parentId: fld_46f40fbf61554bf99019d57bc3c2d61d
+    modified: 1650520089486
+    created: 1649035403350
+    url: http://localhost:5160/api/c/platforms/1/commands
+    name: Create command for Platform
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"HowTo": "Git push repo",
+        	"CommandLine": "git push"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_4b2aff1a17814f038396b9738f610188
+    authentication: {}
+    metaSortKey: -1646967004909.1094
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_0cbad33dfd31473cb01a9b6a18b19b83
     parentId: fld_ae60cb14a0e04ae5adc31ad4c19a71b6
     modified: 1647899306491
@@ -333,8 +459,8 @@ resources:
     settingFollowRedirects: global
     _type: request
   - _id: req_6d97c8a749474c36b48ac03b21409dac
-    parentId: fld_875253d6a354483587fd7b97bd4c4cc8
-    modified: 1647899342980
+    parentId: fld_3c2acb49e1d94a3d9344de7c37cbc671
+    modified: 1649296285151
     created: 1647124941793
     url: http://acme.com/api/platforms
     name: GetPlatforms
@@ -353,19 +479,19 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
-  - _id: fld_875253d6a354483587fd7b97bd4c4cc8
+  - _id: fld_3c2acb49e1d94a3d9344de7c37cbc671
     parentId: fld_2916ce5463cf4ae8b663147905d30bfa
-    modified: 1647899300909
-    created: 1647899300909
-    name: Ingress
+    modified: 1649296275233
+    created: 1649296275233
+    name: Platform Service (Nginx)
     description: ""
     environment: {}
     environmentPropertyOrder: null
-    metaSortKey: -1647899300909
+    metaSortKey: -1649296275233
     _type: request_group
   - _id: req_aba03896a6ba4f75acb84755d9198bd0
-    parentId: fld_875253d6a354483587fd7b97bd4c4cc8
-    modified: 1648081766977
+    parentId: fld_3c2acb49e1d94a3d9344de7c37cbc671
+    modified: 1650530582634
     created: 1647124941796
     url: http://acme.com/api/platforms
     name: Create Platform
@@ -375,9 +501,9 @@ resources:
       mimeType: application/json
       text: |-
         {
-        		"name": "Docker",
-        		"publisher": "Docker",
-        		"cost": "Free"
+        		"name": "Mirna",
+        		"publisher": "Oracle",
+        		"cost": "PAID"
         	}
     parameters: []
     headers:
@@ -395,10 +521,10 @@ resources:
     settingFollowRedirects: global
     _type: request
   - _id: req_8aa7b305865f43c9b163c945e123a973
-    parentId: fld_875253d6a354483587fd7b97bd4c4cc8
-    modified: 1648075441268
+    parentId: fld_3c2acb49e1d94a3d9344de7c37cbc671
+    modified: 1650530562272
     created: 1647124941798
-    url: http://acme.com/api/platforms/3
+    url: http://acme.com/api/platforms/1
     name: GetPlatformById
     description: ""
     method: GET
@@ -407,6 +533,162 @@ resources:
     headers: []
     authentication: {}
     metaSortKey: -1646929410955.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_d9c85a52ab0b47ee9782b8f090a2a3df
+    parentId: fld_3c2acb49e1d94a3d9344de7c37cbc671
+    modified: 1650530752927
+    created: 1650175803426
+    url: http://acme.com/api/platforms/4
+    name: Update Platform
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        	{
+        		"id": 4,
+        		"name": "Redis",
+        		"publisher": "Redis",
+        		"cost": "Free"
+        	}
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_b8a3a9fa906d4156b6a894e57790204d
+    authentication: {}
+    metaSortKey: -1646929411030.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_013a98ad07f0481d8c8534769c39adb2
+    parentId: fld_3c2acb49e1d94a3d9344de7c37cbc671
+    modified: 1650530540154
+    created: 1650525272786
+    url: http://acme.com/api/platforms/9
+    name: Delete Platform
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1646929411105.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_69f35b72fad64c5db1000d993739d5dd
+    parentId: fld_87e8317c3c4f42e29bcd7aa945410802
+    modified: 1649297486377
+    created: 1649296382120
+    url: http://acme.com/api/c/platforms
+    name: GetAllPlatforms
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1646941942290.2031
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_87e8317c3c4f42e29bcd7aa945410802
+    parentId: fld_2916ce5463cf4ae8b663147905d30bfa
+    modified: 1649296358990
+    created: 1649296358990
+    name: Command Service (Nginx)
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1649296358990
+    _type: request_group
+  - _id: req_abaabbb138e84e9ba956861b262194be
+    parentId: fld_87e8317c3c4f42e29bcd7aa945410802
+    modified: 1650530588235
+    created: 1649296397846
+    url: http://acme.com/api/c/platforms/2/commands
+    name: Create command for Platform
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"HowTo": "Git push repo",
+        	"CommandLine": "git push"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_4b2aff1a17814f038396b9738f610188
+    authentication: {}
+    metaSortKey: -1646941942240.2031
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_e89337e34f064149abfbd9fd747df9e5
+    parentId: fld_87e8317c3c4f42e29bcd7aa945410802
+    modified: 1650529104035
+    created: 1649296417265
+    url: http://acme.com/api/c/platforms/1/commands
+    name: Get all commands for Platform
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1646941942190.2031
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_51d67a2adfd04a40aab445bde6b6dd43
+    parentId: fld_87e8317c3c4f42e29bcd7aa945410802
+    modified: 1650529146944
+    created: 1650529064281
+    url: http://acme.com/api/c/platforms/1/commands/1
+    name: Get command for Platform
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1646941942315.2031
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -435,7 +717,7 @@ resources:
     _type: cookie_jar
   - _id: spc_d99808e4779b428f91e17dc341b91c47
     parentId: wrk_e2b036e98a8a46df8fa408839ed4ce80
-    modified: 1648777137856
+    modified: 1650531188937
     created: 1646757657420
     fileName: New Document
     contents: ""
